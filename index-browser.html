@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Journal Entry Template - Browser Version</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* =======================
+       PAGE SETUP
+       ======================= */
+    @page {
+      size: 11in 8.5in landscape; /* US Letter Landscape */
+      margin: 0.45in;
+      padding-bottom: 0.2in;
+      padding-top: 0.2in;
+      border: 1px solid #444; /* Consistent border on all pages */
+      counter-increment: page;
+      
+      /* Remove all browser headers and footers */
+      @top-left { content: ""; }
+      @top-center { content: ""; }
+      @top-right { content: ""; }
+      @bottom-center { content: ""; }
+      @bottom-right { content: ""; }
+      
+      @bottom-left {
+        content: counter(page);
+        font-family: "Lato", sans-serif;
+        font-size: 12pt;
+        color: #333;
+        margin-left: 0.2in;
+        margin-top: -0.7in;
+      }
+    }
+
+    @media print {
+      html, body {
+        margin: 0 !important;
+        padding: 0 !important;
+        background: white !important;
+        display: block !important;
+        width: auto !important;
+        height: auto !important;
+        counter-reset: page 0;
+      }
+      
+      .page {
+        width: auto !important;
+        height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        max-width: none !important;
+        position: static !important;
+        overflow: visible !important;
+        page-break-inside: auto;
+      }
+      
+      .page-inner {
+        margin: 0 !important;
+        padding: 0.2in 0.4in !important;
+        width: auto !important;
+        height: auto !important;
+        border: none !important;
+        box-sizing: border-box !important;
+        overflow: visible !important;
+        position: relative !important;
+      }
+      
+      .text-content {
+        height: auto !important;
+        overflow: visible !important;
+      }
+      
+      .text-content p {
+        page-break-inside: auto;
+        orphans: 1;
+        widows: 1;
+      }
+      
+      .print-controls, .version-label, .instructions {
+        display: none !important;
+      }
+    }
+
+    /* =======================
+       BASE STYLES
+       ======================= */
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      background: #eee;
+      font-family: "Lato", sans-serif;
+      line-height: 1.5;
+      color: #222;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    /* =======================
+       PAGE FRAME
+       ======================= */
+    .page {
+      width: 11in;
+      height: auto;
+      background: white;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      overflow: visible;
+      position: relative;
+      max-width: 95vw; /* Responsive: never exceed 95% of viewport width */
+    }
+
+    /* Responsive adjustments for smaller screens */
+    @media screen and (max-width: 12in) {
+      .page {
+        width: 95vw;
+        margin: 20px auto;
+      }
+      
+      .page-inner {
+        width: calc(100% - 40px);
+        margin: 20px auto;
+        padding: 20px 30px;
+      }
+      
+      .image-row {
+        max-width: 100%;
+      }
+      
+      .image-row img {
+        width: 30%;
+      }
+      
+      .image-row img:not(:last-child) {
+        margin-right: 15px;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .page {
+        width: 98vw;
+        margin: 10px auto;
+      }
+      
+      .page-inner {
+        width: calc(100% - 20px);
+        margin: 10px auto;
+        padding: 15px 20px;
+      }
+      
+      .image-row {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .image-row img {
+        width: 80%;
+        margin-bottom: 15px;
+      }
+      
+      .image-row img:not(:last-child) {
+        margin-right: 0;
+      }
+    }
+
+    .page-inner {
+      border: 1px solid #444;
+      width: calc(100% - 0.9in);
+      height: calc(100% - 0.9in);
+      margin: 0.45in auto;
+      padding: 0.2in 0.4in;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .text-content {
+      flex: 1;
+    }
+
+    /* =======================
+       IMAGE ROW
+       ======================= */
+    .image-row {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 0.30in;
+      max-width: 85%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .image-row img {
+      margin: 0;
+      width: 30%; /* fixed width for consistency */
+      box-sizing: border-box;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      border: 1px solid #ccc;
+    }
+
+    .image-row img:not(:last-child) {
+      margin-right: 0.25in; /* consistent gap between images */
+    }
+
+    /* =======================
+       TEXT
+       ======================= */
+    .text-content {
+      text-align: justify;
+    }
+
+    p {
+      font-size: 12pt;
+      margin-bottom: 0.18in;
+      line-height: 1.55;
+    }
+
+    .dropcap {
+      float: left;
+      font-size: 35pt;
+      line-height: 1;
+      margin-right: 8px;
+      color: #000;
+    }
+
+    .text-content p:first-of-type {
+      margin-top: 0;
+      text-indent: 0;
+    }
+
+    .text-content p:first-of-type br {
+      display: block;
+      content: "";
+      margin-bottom: 0.05in; /* ensures second sentence starts below */
+    }
+
+    /* =======================
+       PRINT CONTROLS
+       ======================= */
+    .print-controls {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      z-index: 1000;
+    }
+
+    .print-btn {
+      padding: 10px 16px;
+      background: #17a2b8;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .print-btn:hover {
+      background: #138496;
+    }
+
+    .version-label {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      background: #17a2b8;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 3px;
+      font-size: 12px;
+      z-index: 1000;
+    }
+
+    .instructions {
+      position: fixed;
+      bottom: 15px;
+      left: 15px;
+      background: rgba(0,0,0,0.8);
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 12px;
+      max-width: 300px;
+      z-index: 1000;
+    }
+
+    .instructions h4 {
+      margin: 0 0 5px 0;
+      color: #17a2b8;
+    }
+
+    .instructions ul {
+      margin: 5px 0 0 15px;
+      padding: 0;
+    }
+
+    .instructions li {
+      margin-bottom: 3px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page">
+    <div class="page-inner">
+      <!-- Image Row -->
+      <div class="image-row">
+        <img src="https://i.postimg.cc/6qpVLYMk/placeholder1.png" alt="Image 1" data-field="image_1">
+        <img src="https://i.postimg.cc/PfSQrnq6/placeholder2.png" alt="Image 2" data-field="image_2">
+        <img src="https://i.postimg.cc/J7p54CnV/placeholder3.png" alt="Image 3" data-field="image_3">
+      </div>
+
+      <!-- Main text content -->
+      <div class="text-content" data-field="content">
+          <p>
+            Perorae perepe se volupid ignihil istibus aperum quam veliatem aute con re, cus delententiam et pore, nam,
+            ad min coris impori omni voluptiis et et mo inum fugit aut harum event expla quiasimeni res doluptam,
+            corenima quistotatur, comnihi llatatum quos modipsam net quid quibeatem sitio. Atatquamet latectem res
+            estruptae consecerem et ipis aut laut apiet lamus ex exerum es im nieni doluptiatur, occaecus eliasin
+            ctecepudandi ut vellabo. Itatem. Et audis velique volo dolo moloribus repeles accaecus alicia sandaep
+            erferum haritatin con net labo. Aquam erro volut eicaerae sam inciet alitiis voluptatiae vent.
+            Lende estiusapicia plitatem inte venducit fugitatet voles electe porerum lam idus.
+          </p>
+
+          <p>
+            Tem fugit ea sum sim quis es doluptis as quis ma dit facerch illuptiorem quiae ne vel molupta spedis si
+            acepedis res et eum audi quidebi tatibus ex estionseque nullitempore lam ilignis es expe quunt ma coreptisi
+            odi dolore etur?
+          </p>
+
+          <div class="image-row">
+            <img src="https://i.postimg.cc/6qpVLYMk/placeholder1.png" alt="Image 1" data-field="image_1">
+            <img src="https://i.postimg.cc/J7p54CnV/placeholder3.png" alt="Image 3" data-field="image_3">
+          </div>
+
+          <div>
+            <span class="dropcap">U</span>r repe simaxim aximenis expelitat.
+            <br>
+            Maximin ctaepe optate voles eum ute pellitis alitatectur?
+          </div>
+
+          <p>
+            Igni dolupta volo corem autatur, sunt, cuptatur si ipit, es commolu ptatio to et aut id que desti dolo mo
+            omnimintore nonsed maximus di rernatia dolore ea volecta sent omnitas dolut pa porum dit estorio. Namet
+            omnimusa volut am facearis id quam, cus reped quam entem ilit harum voluptur aut quae di tem ipsa nem
+            consequiae quidem reri aborenihil inctem que venihiciet doluptio optiusam volupit atiore, untiur rero
+            milique nusapera aut quati unt ma voluptat.
+          </p>
+
+          <p>
+            Igni dolupta volo corem autatur, sunt, cuptatur si ipit, es commolu ptatio to et aut id que desti dolo mo
+            omnimintore nonsed maximus di rernatia dolore ea volecta sent omnitas dolut pa porum dit estorio. Namet
+            omnimusa volut am facearis id quam, cus reped quam entem ilit harum voluptur aut quae di tem ipsa nem
+            consequiae quidem reri aborenihil inctem que venihiciet doluptio optiusam volupit atiore, untiur rero
+            milique nusapera aut quati unt ma voluptat.
+          </p>
+
+          <p>
+            Igni dolupta volo corem autatur, sunt, cuptatur si ipit, es commolu ptatio to et aut id que desti dolo mo
+            omnimintore nonsed maximus di rernatia dolore ea volecta sent omnitas dolut pa porum dit estorio. Namet
+            omnimusa volut am facearis id quam, cus reped quam entem ilit harum voluptur aut quae di tem ipsa nem
+            consequiae quidem reri aborenihil inctem que venihiciet doluptio optiusam volupit atiore, untiur rero
+            milique nusapera aut quati unt ma voluptat.
+          </p>
+
+          <div>
+            <span class="dropcap">U</span>r repe simaxim aximenis expelitat.
+            <br>
+            Maximin ctaepe optate voles eum ute pellitis alitatectur?
+          </div>
+
+          <p>
+            Igni dolupta volo corem autatur, sunt, cuptatur si ipit, es commolu ptatio to et aut id que desti dolo mo
+            omnimintore nonsed maximus di rernatia dolore ea volecta sent omnitas dolut pa porum dit estorio. Namet
+            omnimusa volut am facearis id quam, cus reped quam entem ilit harum voluptur aut quae di tem ipsa nem
+            consequiae quidem reri aborenihil inctem que venihiciet doluptio optiusam volupit atiore, untiur rero
+            milique nusapera aut quati unt ma voluptat.
+          </p>
+
+          <p>
+            Igni dolupta volo corem autatur, sunt, cuptatur si ipit, es commolu ptatio to et aut id que desti dolo mo
+            omnimintore nonsed maximus di rernatia dolore ea volecta sent omnitas dolut pa porum dit estorio. Namet
+            omnimusa volut am facearis id quam, cus reped quam entem ilit harum voluptur aut quae di tem ipsa nem
+            consequiae quidem reri aborenihil inctem que venihiciet doluptio optiusam volupit atiore, untiur rero
+            milique nusapera aut quati unt ma voluptat.
+          </p>
+
+          <p>
+            Igni dolupta volo corem autatur, sunt, cuptatur si ipit, es commolu ptatio to et aut id que desti dolo mo
+            omnimintore nonsed maximus di rernatia dolore ea volecta sent omnitas dolut pa porum dit estorio. Namet
+            omnimusa volut am facearis id quam, cus reped quam entem ilit harum voluptur aut quae di tem ipsa nem
+            consequiae quidem reri aborenihil inctem que venihiciet doluptio optiusam volupit atiore, untiur rero
+            milique nusapera aut quati unt ma voluptat.
+          </p>
+
+          <p>
+            Igni dolupta volo corem autatur, sunt, cuptatur si ipit, es commolu ptatio to et aut id que desti dolo mo
+            omnimintore nonsed maximus di rernatia dolore ea volecta sent omnitas dolut pa porum dit estorio. Namet
+            omnimusa volut am facearis id quam, cus reped quam entem ilit harum voluptur aut quae di tem ipsa nem
+            consequiae quidem reri aborenihil inctem que venihiciet doluptio optiusam volupit atiore, untiur rero
+            milique nusapera aut quati unt ma voluptat.
+          </p>
+
+          <p>Ne quam, est labor molores enectius.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Hide controls and instructions during print
+    window.addEventListener('beforeprint', function() {
+      document.querySelector('.print-controls').style.display = 'none';
+      document.querySelector('.version-label').style.display = 'none';
+      document.querySelector('.instructions').style.display = 'none';
+    });
+    
+    window.addEventListener('afterprint', function() {
+      document.querySelector('.print-controls').style.display = 'block';
+      document.querySelector('.version-label').style.display = 'block';
+      document.querySelector('.instructions').style.display = 'block';
+    });
+  </script>
+
+  <!-- Print controls -->
+  <div class="print-controls">
+    <button onclick="window.print()" class="print-btn">Print / Save as PDF</button>
+  </div>
+
+</body>
+</html>
