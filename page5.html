@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Page 5</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* =======================
+       PAGE SETUP
+       ======================= */
+    @page {
+      size: 11in 8.5in landscape; /* US Letter Landscape */
+      margin: 0;
+    }
+
+    @media print {
+      html, body {
+        margin: 0 !important;
+        padding: 0 !important;
+        background: white !important;
+        display: block !important;
+        width: auto !important;
+        height: auto !important;
+        counter-reset: page 1;
+      }
+
+      @page {
+        size: 11in 8.5in landscape;
+        margin: 0.45in;
+        border: 1px solid #165a6f;
+        counter-increment: page;
+        
+        /* Remove browser headers and footers */
+        @top-left { content: ""; }
+        @top-center { content: ""; }
+        @top-right { content: ""; }
+        @bottom-center { content: ""; }
+        @bottom-right {
+          content: counter(page);
+          font-family: "Lato", sans-serif;
+          font-size: 12pt;
+          color: #333;
+          margin-right: 0.2in;
+          margin-top: -0.7in;
+        }
+        
+        @bottom-left { content: ""; }
+      }
+      
+      .page {
+        width: auto !important;
+        height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        max-width: none !important;
+        position: static !important;
+        overflow: visible !important;
+        page-break-inside: auto;
+      }
+      
+      .page-inner {
+        margin: 0 !important;
+        padding: 0.2in 0.4in !important;
+        width: auto !important;
+        height: auto !important;
+        border: none !important;
+        box-sizing: border-box !important;
+        overflow: visible !important;
+        position: relative !important;
+      }
+      
+      .text-content {
+        height: auto !important;
+        overflow: visible !important;
+      }
+      
+      .text-content p {
+        page-break-inside: auto;
+        orphans: 1;
+        widows: 1;
+      }
+      
+      .print-controls {
+        display: none !important;
+      }
+    }
+
+    /* =======================
+       BASE STYLES
+       ======================= */
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      background: #eee;
+      font-family: "Lato", sans-serif;
+      line-height: 1.5;
+      color: #222;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    /* =======================
+       PAGE FRAME
+       ======================= */
+    .page {
+      width: 11in;
+      height: auto;
+      background: white;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      overflow: visible;
+      position: relative;
+      max-width: 95vw; /* Responsive: never exceed 95% of viewport width */
+    }
+
+    /* Responsive adjustments for smaller screens */
+    @media screen and (max-width: 12in) {
+      .page {
+        width: 95vw;
+        margin: 20px auto;
+      }
+      
+      .page-inner {
+        width: calc(100% - 40px);
+        margin: 20px auto;
+        padding: 20px 30px;
+      }
+      
+      .image-row {
+        max-width: 100%;
+      }
+      
+      .image-row img {
+        width: 30%;
+      }
+      
+      .image-row img:not(:last-child) {
+        margin-right: 15px;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .page {
+        width: 98vw;
+        margin: 10px auto;
+      }
+      
+      .page-inner {
+        width: calc(100% - 20px);
+        margin: 10px auto;
+        padding: 15px 20px;
+      }
+      
+      .image-row {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .image-row img {
+        width: 80%;
+        margin-bottom: 15px;
+      }
+      
+      .image-row img:not(:last-child) {
+        margin-right: 0;
+      }
+    }
+
+    .page-inner {
+      border: 1px solid #165a6f;
+      width: calc(100% - 0.9in);
+      height: calc(100% - 0.9in);
+      margin: 0.45in auto;
+      padding: 0.2in 0.4in;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .text-content {
+      flex: 1;
+    }
+
+    /* =======================
+       IMAGE ROW
+       ======================= */
+    .image-row {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 0.30in;
+      max-width: 85%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .image-row img {
+      margin: 0;
+      width: 30%; /* fixed width for consistency */
+      box-sizing: border-box;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      border: 1px solid #ccc;
+    }
+
+    .image-row img:not(:last-child) {
+      margin-right: 0.25in; /* consistent gap between images */
+    }
+
+    /* =======================
+       TEXT
+       ======================= */
+    .text-content {
+      text-align: justify;
+    }
+
+    p {
+      font-size: 12pt;
+      margin-bottom: 0.18in;
+      line-height: 1.55;
+    }
+
+    .dropcap {
+      float: left;
+      font-size: 35pt;
+      line-height: 1;
+      margin-right: 8px;
+      color: #000;
+    }
+
+    .text-content p:first-of-type {
+      margin-top: 0;
+      text-indent: 0;
+    }
+
+    .text-content p:first-of-type br {
+      display: block;
+      content: "";
+      margin-bottom: 0.05in; /* ensures second sentence starts below */
+    }
+
+      /* =======================
+         FEATURE PHOTO
+         ======================= */
+      .feature-photo {
+        position: relative;
+        float: left;
+        width: 4.5in;
+        margin: 0.2in 0.3in 0.25in -0.88in; /* overhang left border, space to text */
+        border: 1px solid #ccc;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        page-break-inside: avoid;
+      }
+
+      .feature-photo img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border: 2px solid #165a6f;
+      }
+
+      .feature-photo .caption {
+        margin: 1in -0.2in -0.3in 0in;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 80%;
+        background: rgba(22, 90, 111, 0.85);
+        color: #fff;
+        padding: 10px 14px;
+        font-size: 11pt;
+        box-sizing: border-box;
+      }
+
+    /* =======================
+       PRINT CONTROLS
+       ======================= */
+    .print-controls {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      z-index: 1000;
+    }
+
+    .print-btn {
+      padding: 10px 16px;
+      background: #0073e6;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .print-btn:hover {
+      background: #005bb5;
+    }
+
+    .version-label {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      background: #28a745;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 3px;
+      font-size: 12px;
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page">
+    <div class="page-inner">
+      <!-- Main text content -->
+      <div class="text-content" data-field="content">
+
+        <!-- Feature image with caption overlay -->
+        <figure class="feature-photo">
+          <img src="https://eneulvrogpuciabaekgp.supabase.co/storage/v1/object/public/journal-photos/c75626ea-8dbf-4a50-9230-f6e3a73f1430/sendgrid_1758641418970_Baptism_-_Ramona_and_Fermin.png" alt="Group of missionaries in front of a building" />
+          <figcaption class="caption">Caption for the picture</figcaption>
+        </figure>
+        <div>
+          <span class="dropcap">M</span>ission Conference and Baptisms
+          <br>
+          Barker Letter 19 August 2024
+        </div>
+        <p>Hello dear Family and Friends,</p>
+        
+        <p>We hope all is well with you.</p>
+        
+        <p>This week we had a mission conference. All the missionaries came together and participated in a musical feast. There were 12 musical numbers, all very inspiring. Some were in Spanish, some in English, and some just music. The mission leaders spoke at the end. It should be a great uplift for the missionaries.</p>
+        
+        <p>Fortunately, Sister <person>Barker</person> and I didnâ€™t need to get the food ready for this one. The food was hired out to some members that have a business and that frequently provide food for the conferences.</p>
+
+        <p>I am responsible for all the apartments (finding, contracts, maintaining, etc.) while Sister <person>Barker</person> takes care of paying all the bills for rent, utilities, and other expenses of the mission. Itâ€™s kind of a switch in roles: now I spend the money and she pays the bills. Fortunately for me, and the mission, all the contracts get reviewed by a lawyer in the area office. I donâ€™t understand the legal stuff in the states and in English so I donâ€™t have much of a chance in <place>Argentina</place> and in Spanish.</p>
+        
+        <p>We have two apartments where we lose the lease at the end of this month. I am scrambling to find new ones. It is a long process that I hope we can speed up as a lot needs to happen once we get the keys. We found one place and were already to proceed but the owner decided she didnâ€™t want to rent to the Church. Oh well, it must have been a place we werenâ€™t suppose to have. We have now found the two apartments that we need, paid the reservation fee, and are in the process of working the contracts out. We could use your prayers to help the process work faster as we need the keys by the end of this week in order to make the move to the new apartments (not furnished, no AC, no washing machine, etc.) and to make repairs to the ones we are leaving. Fortunately, we have a team of contractors that can do these things quickly once we get the keys.</p>
+        
+        <p>We were able to attend two more baptism services this week. One on Saturday was a couple who were married the day before so they could be baptized. One of their children, a girl of about 9 years of age, was baptized about a month and a half ago and she gave the talk on baptism and did a terrific job. Hard to believe she was that new to the church. That is a great family.</p>
+        
+        <p>Sunday was the baptism of the husband of the sister whose baptism we attended about 3 weeks ago. He wasnâ€™t quite ready when she was baptized, or rather I should say he didnâ€™t know he was ready. So another terrific couple. We love attending the baptisms.</p>
+        
+        <p>This weekend we were able to listen to our Stake Conference from <place>Chandler</place>, <place>Arizona</place>. We are grateful for the technology that makes this possible. It was a treat to see people arriving, people we havenâ€™t seen for a few months. The talks and testimonies and music were inspiring. And we could understand the talks and testimonies.</p>
+        
+        <p>We still struggle to understand Spanish, but it is coming along, slowly. We do find though that in the dealings with our responsibilities in the office that we are able to communicate adequately so we donâ€™t think we are hindering the work too much.</p>
+        
+        <p>Sunday night was capped off with a video call with the family. It was great to see them all together again, mostly. A great way to end the day.</p>
+        
+        <p>Love to all,</p>
+        
+        <p>Elder and Sister <person>Barker</person></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DocRaptor -->
+  <script src="https://docraptor.com/docraptor-1.0.0.js"></script>
+  <script>
+    function downloadPDF() {
+      DocRaptor.createAndDownloadDoc("pO4bGB_Zm7afkfMOZEfG", {
+        test: true,
+        type: "pdf",
+        name: "journal-sample-docraptor.pdf",
+        document_content: document.documentElement.outerHTML
+      });
+    }
+
+  </script>
+
+  <!-- Print controls -->
+  <div class="print-controls">
+    <button onclick="downloadPDF()" class="print-btn">Download PDF (DocRaptor)</button>
+  </div>
+
+</body>
+</html>
