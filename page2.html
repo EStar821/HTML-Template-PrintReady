@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Page 2</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    @page {
+      size: 11in 8.5in landscape;
+      margin: 0;
+      background: linear-gradient(to right, #165a6f 1.7in, white 1.7in);
+    }
+
+    /* =======================
+       PRINT STYLES
+       ======================= */
+    @media print {
+      @page {
+        
+        counter-increment: page;
+        
+        /* Remove browser headers and footers */
+        @top-left { content: ""; }
+        @top-center { content: ""; }
+        @top-right { content: ""; }
+        @bottom-center { content: ""; }
+        @bottom-right { content: ""; }
+        
+        @bottom-left {
+          content: counter(page);
+          font-family: "Lato", sans-serif;
+          font-size: 12pt;
+          color: white;
+          margin-left: 0.7in;
+          margin-top: -1.2in;
+        }
+      }
+      html, body {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: auto !important;
+        height: auto !important;
+        counter-reset: page 1;
+        background: none !important;
+      }
+
+      .page {
+        margin: 0;
+        padding: 0;
+        page-break-after: always;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+      }
+
+      .page-container {
+        margin-left: 1.7in;
+        padding: 0.45in;
+        background: none;
+        height: auto;
+      }
+
+      .page-inner {
+        padding: 0.2in 0.4in 0.15in 0.4in;
+        box-sizing: border-box;
+        overflow: visible;
+        border-left: none;
+      }
+
+      .text-content {
+        column-count: 2;
+        column-fill: auto;
+        text-align: justify;
+        line-height: 1.55;
+        height: auto;
+        overflow: visible;
+        page-break-inside: avoid;
+        break-inside: avoid-page;
+      }
+
+      .text-content p {
+        font-size: 12pt;
+        margin-bottom: 0.18in;
+        orphans: 2;
+        widows: 2;
+      }
+
+      .print-controls {
+        display: none !important;
+      }
+    }
+
+    /* =======================
+       SCREEN STYLES
+       ======================= */
+    body {
+      margin: 0;
+      padding: 0;
+      background: #eee;
+      font-family: "Lato", sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+
+    .page {
+      width: 11in;
+      background: linear-gradient(to right, #165a6f 1.7in, white 1.7in);
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      margin: 0 auto;
+    }
+
+    .page-container {
+      margin-left: 1.7in;
+      padding: 0.45in;
+      padding-left: 0;
+    }
+
+    .page-inner {
+      padding: 0.2in 0.4in 0.15in 0.4in;
+      border: 1px solid #165a6f;
+      border-left: none;
+    }
+
+    .text-content p {
+      font-size: 12pt;
+      margin-bottom: 0.18in;
+    }
+
+    /* =======================
+      IMAGE ROW
+      ======================= */
+    .image-row {
+      text-align: center;
+      margin: 0.3in auto 0.4in auto;
+      max-width: 90%;
+      white-space: nowrap;
+    }
+
+    .image-row img {
+      display: inline-block;
+      vertical-align: top;
+      width: 30%;        /* fixed width */
+      height: 2.3in;       /* fixed height */
+      margin: 0 0.15in;
+      border: 1px solid #ccc;
+      object-fit: cover;   /* crop edges evenly */
+      box-sizing: border-box;
+    }
+
+    .image-row img:first-child { margin-left: 0; }
+    .image-row img:last-child { margin-right: 0; }
+    
+    .dropcap {
+      float: left;
+      font-size: 35pt;
+      line-height: 1;
+      margin-right: 8px;
+      color: #000;
+    }
+
+    .print-controls {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+    }
+
+    .print-btn {
+      padding: 10px 16px;
+      background: #0073e6;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .print-btn:hover {
+      background: #005bb5;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="page-container">
+      <div class="page-inner">
+        <div class="text-content">
+          <div>
+            <span class="dropcap">F</span>amily Visits and Father's Day Reflections
+            <br>
+            Barker Letter 15 June 2025
+          </div>
+
+          <p>Hello Dear Family and Friends,</p>
+
+          <p>Happy Father's Day to all Dads everywhere. “A good father is one of the most unsung, unpraised, unnoticed, and yet one of the most valuable assets in our society.” - Billy Graham. We love you all.</p>
+          
+          <p>This week we wrapped up a wonderful visit with David's Family. After church, some of the boys gave us a personal piano recital. Then we went to our apartment and fixed a typical Barker Sunday Dinner — Waffles and Scrambled eggs. I am not wasting any time using my waffle iron :) Our apartment was almost big enough. My favorite part was that David made the scrambled eggs, his Dad made the waffles, and one of the boys said that was his favorite meal of the trip. I think he was trying to make us feel good.</p>
+          
+          <p>We then went to the La Recoleta Cemetery in Buenos Aires. It is very massive, with over 6,000 statues, coffins and crypts that commemorate some of Argentina's most notable people.</p>
+      
+          <p>This week we wrapped up a wonderful visit with David's Family. After church, some of the boys gave us a personal piano recital. Then we went to our apartment and fixed a typical Barker Sunday Dinner — Waffles and Scrambled eggs. I am not wasting any time using my waffle iron :) Our apartment was almost big enough. My favorite part was that David made the scrambled eggs, his Dad made the waffles, and one of the boys said that was his favorite meal of the trip. I think he was trying to make us feel good.</p>
+          
+          <p>We then went to the La Recoleta Cemetery in Buenos Aires. It is very massive, with over 6,000 statues, coffins and crypts that commemorate some of Argentina's most notable people.</p>
+          <p>Monday, Elder Barker and I spent time in the office. Then we went out to dinner with the family to *Siga La Vaca*. This is our second time and it doesn't disappoint. When we got back to their AIRBNB, we played a great game of Bank.</p>
+          
+          <p>Tuesday morning we loaded all of the family's luggage in the back of the truck. Some rode with us and others went in an Uber. We made our way to China Town and walked around for a while. I think one of the best buys was "knock off" Pokemon cards. Then it was time to head to the airport to say goodbye. We had such a wonderful visit and there were a few tears as we said goodbye.</p>
+          
+          <p>The rest of the week was back to “normal” at the office:</p>
+          
+          <ul>
+            <li>The rain came tumbling down and the mission office flooded.</li>
+            <li>Keys were lost, Pensions were fixed, and bills were paid.</li>
+            <li>We said goodbye to awesome Elder Fackrell, Elder Eubanks, and others going home after serving the Lord.</li>
+          </ul>
+          
+          <p>While we were out doing our Saturday errands, we got a call from our son, John. He was having a package delivered to the mission office for Elder Barker for Father’s Day. And, by the way, it needed to be refrigerated. Again, Elder Ford and Elder Villatorro stepped in and saved the day. Thank you again.</p>
+          
+          <p>End of Travel Log… till next week.</p>
+          
+          <p>Have a great week. We love you all,</p>
+          
+          <p>Elder and Sister Barker</p>
+
+          <div>
+            <span class="dropcap">M</span>ission Conference and Baptisms
+            <br>
+            Barker Letter 19 August 2024
+          </div>
+          <p>Hello dear Family and Friends,</p>
+          
+          <p>We hope all is well with you.</p>
+          
+          <p>This week we had a mission conference. All the missionaries came together and participated in a musical feast. There were 12 musical numbers, all very inspiring. Some were in Spanish, some in English, and some just music. The mission leaders spoke at the end. It should be a great uplift for the missionaries.</p>
+          
+          <p>Fortunately, Sister Barker and I didn’t need to get the food ready for this one. The food was hired out to some members that have a business and that frequently provide food for the conferences.</p>
+          
+          <p>I am responsible for all the apartments (finding, contracts, maintaining, etc.) while Sister Barker takes care of paying all the bills for rent, utilities, and other expenses of the mission. It’s kind of a switch in roles: now I spend the money and she pays the bills. Fortunately for me, and the mission, all the contracts get reviewed by a lawyer in the area office. I don’t understand the legal stuff in the States and in English, so I don’t have much of a chance in Argentina and in Spanish.</p>
+          
+          <p>We have two apartments where we lose the lease at the end of this month. I am scrambling to find new ones. It is a long process that I hope we can speed up as a lot needs to happen once we get the keys. We found one place and were already to proceed but the owner decided she didn’t want to rent to the Church. Oh well, it must have been a place we weren’t supposed to have. We have now found the two apartments that we need, paid the reservation fee, and are in the process of working the contracts out. We could use your prayers to help the process work faster as we need the keys by the end of this week in order to make the move to the new apartments (not furnished, no AC, no washing machine, etc.) and to make repairs to the ones we are leaving. Fortunately, we have a team of contractors that can do these things quickly once we get the keys.</p>
+          
+          <p>We were able to attend two more baptism services this week. One on Saturday was a couple who were married the day before so they could be baptized. One of their children, a girl of about 9 years of age, was baptized about a month and a half ago and she gave the talk on baptism and did a terrific job. Hard to believe she was that new to the church. That is a great family.</p>
+          
+          <p>Sunday was the baptism of the husband of the sister whose baptism we attended about 3 weeks ago. He wasn’t quite ready when she was baptized, or rather I should say he didn’t know he was ready. So another terrific couple. We love attending the baptisms.</p>
+          
+          <p>This weekend we were able to listen to our Stake Conference from Chandler, Arizona. We are grateful for the technology that makes this possible. It was a treat to see people arriving, people we haven’t seen for a few months. The talks and testimonies and music were inspiring. And we could understand the talks and testimonies.</p>
+          
+          <p>We still struggle to understand Spanish, but it is coming along, slowly. We do find though that in the dealings with our responsibilities in the office that we are able to communicate adequately so we don’t think we are hindering the work too much.</p>
+          
+          <p>Sunday night was capped off with a video call with the family. It was great to see them all together again, mostly. A great way to end the day.</p>
+          
+          <p>Love to all,</p>
+          
+          <p>Elder and Sister Barker</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DocRaptor -->
+  <script src="https://docraptor.com/docraptor-1.0.0.js"></script>
+  <script>
+    function downloadPDF() {
+      DocRaptor.createAndDownloadDoc("pO4bGB_Zm7afkfMOZEfG", {
+        test: true,
+        type: "pdf",
+        name: "journal-sample-docraptor.pdf",
+        document_content: document.documentElement.outerHTML
+      });
+    }
+  </script>
+
+  <div class="print-controls">
+    <button onclick="downloadPDF()" class="print-btn">Download PDF (DocRaptor)</button>
+  </div>
+
+</body>
+</html>
