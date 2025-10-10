@@ -58,6 +58,7 @@
         position: static !important;
         overflow: visible !important;
         page-break-inside: auto;
+        page-break-after: always;
       }
       
       .page-inner {
@@ -74,6 +75,9 @@
       .text-content {
         height: auto !important;
         overflow: visible !important;
+        column-count: 2;
+        column-fill: auto;  
+        column-gap: 0.25in;
       }
       
       .text-content p {
@@ -104,6 +108,7 @@
       color: #222;
       padding-top: 20px;
       padding-bottom: 20px;
+      font-size: 10pt;
     }
 
     /* =======================
@@ -218,17 +223,21 @@
        ======================= */
     .text-content {
       text-align: justify;
+      column-count: 2;
+      column-fill: balance;
+      margin-bottom: 0.2in;
+      column-gap: 0.25in;
     }
 
     p {
-      font-size: 12pt;
+      font-size: 10pt;
       margin-bottom: 0.18in;
       line-height: 1.55;
     }
 
     .dropcap {
       float: left;
-      font-size: 35pt;
+      font-size: 30pt;
       line-height: 1;
       margin-right: 8px;
       color: #000;
@@ -268,18 +277,6 @@
     .print-btn:hover {
       background: #005bb5;
     }
-
-    .version-label {
-      position: fixed;
-      top: 15px;
-      left: 15px;
-      background: #28a745;
-      color: white;
-      padding: 5px 10px;
-      border-radius: 3px;
-      font-size: 12px;
-      z-index: 1000;
-    }
   </style>
 </head>
 <body>
@@ -300,6 +297,7 @@
           <br>
           Barker Letter 15 June 2025
         </div>
+        <br>
 
         <p>Hello Dear Family and Friends,</p>
       
@@ -328,79 +326,50 @@
         <p>Have a great week. We love you all,</p>
         
         <p><person>Elder</person> and <person>Sister Barker</person></p>
-        
       </div>
       <div class="image-row">
-        <img src="https://eneulvrogpuciabaekgp.supabase.co/storage/v1/object/public/journal-photos/c75626ea-8dbf-4a50-9230-f6e3a73f1430/sendgrid_1758641418370_Mission_Conference.jpg" alt="Image 1" data-field="image_1">
-        <img src="https://eneulvrogpuciabaekgp.supabase.co/storage/v1/object/public/journal-photos/c75626ea-8dbf-4a50-9230-f6e3a73f1430/sendgrid_1758641418970_Baptism_-_Ramona_and_Fermin.png" alt="Image 2" data-field="image_2">
-        <img src="https://eneulvrogpuciabaekgp.supabase.co/storage/v1/object/public/journal-photos/c75626ea-8dbf-4a50-9230-f6e3a73f1430/sendgrid_1758641419557_Baptism_-_Marcelo_Nanni.png" alt="Image 3" data-field="image_3">
+        <img src="https://eneulvrogpuciabaekgp.supabase.co/storage/v1/object/public/journal-photos/4519fc3e-9198-408c-9592-23e339d236e0/sendgrid_1758568131606_1000010898.jpg" alt="Image 1" data-field="image_1">
+        <img src="https://eneulvrogpuciabaekgp.supabase.co/storage/v1/object/public/journal-photos/4519fc3e-9198-408c-9592-23e339d236e0/sendgrid_1758568132083_1000010899.jpg" alt="Image 3" data-field="image_3">
+        <img src="https://eneulvrogpuciabaekgp.supabase.co/storage/v1/object/public/journal-photos/4519fc3e-9198-408c-9592-23e339d236e0/sendgrid_1758568130907_1000011044.jpg" alt="Image 3" data-field="image_3">
       </div>
 
       <!-- Main text content -->
       <div class="text-content" data-field="content">
 
         <div>
-          <span class="dropcap">M</span>ission Conference and Baptisms
+          <span class="dropcap">F</span>amily Visits and Father's Day Reflections
           <br>
-          Barker Letter 19 August 2024
+          Barker Letter 15 June 2025
         </div>
-        <p>Hello dear Family and Friends,</p>
-        
-        <p>We hope all is well with you.</p>
-        
-        <p>This week we had a mission conference. All the missionaries came together and participated in a musical feast. There were 12 musical numbers, all very inspiring. Some were in Spanish, some in English, and some just music. The mission leaders spoke at the end. It should be a great uplift for the missionaries.</p>
-        
-        <p>Fortunately, Sister <person>Barker</person> and I didnâ€™t need to get the food ready for this one. The food was hired out to some members that have a business and that frequently provide food for the conferences.</p>
-        
-        <p>I am responsible for all the apartments (finding, contracts, maintaining, etc.) while Sister <person>Barker</person> takes care of paying all the bills for rent, utilities, and other expenses of the mission. Itâ€™s kind of a switch in roles: now I spend the money and she pays the bills. Fortunately for me, and the mission, all the contracts get reviewed by a lawyer in the area office. I donâ€™t understand the legal stuff in the states and in English so I donâ€™t have much of a chance in <place>Argentina</place> and in Spanish.</p>
-        
-        <p>We have two apartments where we lose the lease at the end of this month. I am scrambling to find new ones. It is a long process that I hope we can speed up as a lot needs to happen once we get the keys. We found one place and were already to proceed but the owner decided she didnâ€™t want to rent to the Church. Oh well, it must have been a place we werenâ€™t suppose to have. We have now found the two apartments that we need, paid the reservation fee, and are in the process of working the contracts out. We could use your prayers to help the process work faster as we need the keys by the end of this week in order to make the move to the new apartments (not furnished, no AC, no washing machine, etc.) and to make repairs to the ones we are leaving. Fortunately, we have a team of contractors that can do these things quickly once we get the keys.</p>
-        
-        <p>We were able to attend two more baptism services this week. One on Saturday was a couple who were married the day before so they could be baptized. One of their children, a girl of about 9 years of age, was baptized about a month and a half ago and she gave the talk on baptism and did a terrific job. Hard to believe she was that new to the church. That is a great family.</p>
-        
-        <p>Sunday was the baptism of the husband of the sister whose baptism we attended about 3 weeks ago. He wasnâ€™t quite ready when she was baptized, or rather I should say he didnâ€™t know he was ready. So another terrific couple. We love attending the baptisms.</p>
-        
-        <p>This weekend we were able to listen to our Stake Conference from <place>Chandler</place>, <place>Arizona</place>. We are grateful for the technology that makes this possible. It was a treat to see people arriving, people we havenâ€™t seen for a few months. The talks and testimonies and music were inspiring. And we could understand the talks and testimonies.</p>
-        
-        <p>We still struggle to understand Spanish, but it is coming along, slowly. We do find though that in the dealings with our responsibilities in the office that we are able to communicate adequately so we donâ€™t think we are hindering the work too much.</p>
-        
-        <p>Sunday night was capped off with a video call with the family. It was great to see them all together again, mostly. A great way to end the day.</p>
-        
-        <p>Love to all,</p>
-        
-        <p>Elder and Sister <person>Barker</person></p>
-      </div>
-      <div class="image-row">
-        <img src="https://eneulvrogpuciabaekgp.supabase.co/storage/v1/object/public/journal-photos/a18760aa-7b6a-4dff-801d-0828a60cba52/sendgrid_1752271187008_image2.png" alt="Image 1" data-field="image_1">
-      </div>
+        <br>
 
-      <!-- Main text content -->
-      <div class="text-content" data-field="content">
-
-        <div>
-          <span class="dropcap">T</span>raining a New Companion in Sundsvall
-          <br>
-          Greenie Life & Rotten Fish
-        </div>
-        <p>Hej fam!</p>
-
-        <p>Okay so I have the craziest news â€” Iâ€™m training!! I literally still feel like Iâ€™m the greenie half the time so when President called me I was like haha are you sure?? But here we are.</p>
-
-        <p>My new comp is <person>Sister Carter</person>, fresh outta the MTC. Sheâ€™s from <place>Utah</place>, super sweet, and reminds me so much of how I felt when I got here. Sheâ€™s so excited about everything and I kinda needed that energy boost tbh.</p>
-
-        <p><place>Sundsvall</place> is still freezing but spring is *trying* to happen. The sun is out longer now which makes a huge difference. I didnâ€™t realize how much the darkness was getting to me until I could feel my face in the sunlight again. I just wanna stand in a patch of sunlight forever lol.</p>
-
-        <p>Weâ€™ve been trying so hard to find people to teach. Knocking doors, street contacting, trying to get referrals but itâ€™s been kinda rough. Lots of polite â€œnej tackâ€s. I keep telling <person>Sister Carter</person> itâ€™s normal here and that itâ€™s okay if itâ€™s slow. Sheâ€™s got such a good attitude about it though. We know the Lordâ€™s got people for us, we just have to keep showing up.</p>
-
-        <p>Oh and we got invited to try surstrÃ¶mming this week. If you donâ€™t know what that is, look it up and then pray for me. ðŸ˜… Itâ€™s basically rotten fermented fish that Swedes eat sometimes and it smells like death. Iâ€™m not kidding, we opened the can outside and still almost died. <person>Sister Carter</person> gagged so hard I thought she was gonna pass out. Pretty sure the member we ate with was just waiting to see if weâ€™d survive haha. Mission stories, right?</p>
-
-        <p><person>Dylan</person>, this oneâ€™s for you if you ever complain about Momâ€™s cooking again, remember your sister ate rotting fish for Jesus okay?? ðŸ˜…</p>
-
-        <p>Love you guys so much. The days are brighter and so is my heart. Thanks for all the comments and prayers. Keep â€˜em coming.</p>
-
-        <p>Stor kram frÃ¥n <place>Sundsvall</place>!!</p>
-
-        <p><spiritual-thought>The days are brighter and so is my heart.</spiritual-thought></p>
+        <p>Hello Dear Family and Friends,</p>
+      
+        <p>Happy Father's Day to all Dads everywhere. * \"A good father is one of the most unsung, unpraised, unnoticed, and yet one of the most valuable assets in our society.\" - Billy Graham *We love you all.</p>
+        
+        <p>This week we wrapped up a wonderful visit with <person>David</person>'s Family. After church, some of the boys gave us a personal piano recital. Then we went to our apartment and fixed a typical <person>Barker</person> Sunday Dinner... Waffles and Scrambled eggs. I am not wasting any time using my waffle iron :) Our apartment was almost big enough. My favorite part was that <person>David</person> made the scrambled eggs, his Dad made the waffles, and one of the boys said that was his favorite meal of the trip. I think he was trying to make us feel good.</p>
+        
+        <p>We then went to the <place>La Recoleta Cemetery</place> in <place>Buenos Aires</place>. It is very massive, with over 6,000 statues, coffins and crypts that commemorate some of <place>Argentina</place>'s most notable people.</p>
+    
+        <p>Monday, <person>Elder Barker</person> and I spent time in the office. Then we went out to dinner with the family to *Siga La Vaca*. This is our second time and it doesn't disappoint. When we got back to their AIRBNB, we played a great game of Bank.</p>
+        
+        <p>Tuesday morning we loaded all of the familyâ€™s luggage in the back of the truck. Some rode with us and others went in an Uber. We made our way to <place>China Town</place> and walked around for a while. I think one of the best buys was \"knock off\" Pokeman cards. Then it was time to head to the airport to say goodbye. We had such a wonderful visit and there were a few tears as we said goodbye.</p>
+        
+        <p>The rest of the week was back to â€œnormalâ€ at the office:</p>
+        
+        <ul>
+        <li>The rain came tumbling down and the mission office flooded.</li>
+        <li>Keys were lost, Pensions were fixed, and bills were paid.</li>
+        <li>We said goodbye to awesome <person>Elder Fackrell</person>, <person>Elder Eubanks</person>, and others going home after serving the Lord.</li>
+        </ul>
+        
+        <p>While we were out doing our Saturday errands, we got a call from our son, <person>John</person>. He was having a package delivered to the mission office for <person>Elder Barker</person> for Fatherâ€™s Day. And, by the way, it needs to be refrigerated. Again, <person>Elder Ford</person> and <person>Elder Villatorro</person> stepped in and saved the day. Thank you again.</p>
+        
+        <p>End of Travel Logâ€¦ till next week.</p>
+        
+        <p>Have a great week. We love you all,</p>
+        
+        <p><person>Elder</person> and <person>Sister Barker</person></p>
       </div>
     </div>
   </div>

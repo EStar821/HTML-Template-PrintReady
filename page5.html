@@ -39,7 +39,7 @@
         @bottom-right {
           content: counter(page);
           font-family: "Lato", sans-serif;
-          font-size: 12pt;
+          font-size: 10pt;
           color: #333;
           margin-right: 0.2in;
           margin-top: -0.7in;
@@ -74,6 +74,9 @@
       .text-content {
         height: auto !important;
         overflow: visible !important;
+        column-count: 2;
+        column-fill: auto;
+        column-gap: 0.25in;
       }
       
       .text-content p {
@@ -104,6 +107,7 @@
       color: #222;
       padding-top: 20px;
       padding-bottom: 20px;
+      font-size: 10pt;
     }
 
     /* =======================
@@ -217,18 +221,21 @@
        TEXT
        ======================= */
     .text-content {
+      column-count: 2;
+      column-fill: balance;
       text-align: justify;
+      column-gap: 0.25in;
     }
 
     p {
-      font-size: 12pt;
+      font-size: 10pt;
       margin-bottom: 0.18in;
       line-height: 1.55;
     }
 
     .dropcap {
       float: left;
-      font-size: 35pt;
+      font-size: 30pt;
       line-height: 1;
       margin-right: 8px;
       color: #000;
@@ -245,38 +252,24 @@
       margin-bottom: 0.05in; /* ensures second sentence starts below */
     }
 
-      /* =======================
-         FEATURE PHOTO
-         ======================= */
-      .feature-photo {
-        position: relative;
-        float: left;
-        width: 4.5in;
-        margin: 0.2in 0.3in 0.25in -0.88in; /* overhang left border, space to text */
-        border: 1px solid #ccc;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        page-break-inside: avoid;
-      }
+    /* =======================
+        FEATURE PHOTO
+        ======================= */
+    .feature-photo {
+      position: relative;
+      width: 4.5in;
+      margin: 0.2in 0.3in 0.25in -0.88in; /* overhang left border, space to text */
+      border: 1px solid #ccc;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      page-break-inside: avoid;
+    }
 
-      .feature-photo img {
-        display: block;
-        width: 100%;
-        height: auto;
-        border: 2px solid #165a6f;
-      }
-
-      .feature-photo .caption {
-        margin: 1in -0.2in -0.3in 0in;
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        width: 80%;
-        background: rgba(22, 90, 111, 0.85);
-        color: #fff;
-        padding: 10px 14px;
-        font-size: 11pt;
-        box-sizing: border-box;
-      }
+    .feature-photo img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 2px solid #165a6f;
+    }
 
     /* =======================
        PRINT CONTROLS
@@ -310,7 +303,7 @@
       color: white;
       padding: 5px 10px;
       border-radius: 3px;
-      font-size: 12px;
+      font-size: 10px;
       z-index: 1000;
     }
   </style>
@@ -325,13 +318,13 @@
         <!-- Feature image with caption overlay -->
         <figure class="feature-photo">
           <img src="https://eneulvrogpuciabaekgp.supabase.co/storage/v1/object/public/journal-photos/c75626ea-8dbf-4a50-9230-f6e3a73f1430/sendgrid_1758641418970_Baptism_-_Ramona_and_Fermin.png" alt="Group of missionaries in front of a building" />
-          <figcaption class="caption">Caption for the picture</figcaption>
         </figure>
         <div>
           <span class="dropcap">M</span>ission Conference and Baptisms
           <br>
           Barker Letter 19 August 2024
         </div>
+        <br>
         <p>Hello dear Family and Friends,</p>
         
         <p>We hope all is well with you.</p>
