@@ -74,9 +74,6 @@
       .text-content {
         height: auto !important;
         overflow: visible !important;
-        column-count: 2;
-        column-fill: auto;
-        column-gap: 0.25in;
       }
       
       .text-content p {
@@ -221,10 +218,7 @@
        TEXT
        ======================= */
     .text-content {
-      column-count: 2;
-      column-fill: balance;
       text-align: justify;
-      column-gap: 0.25in;
     }
 
     p {
@@ -262,6 +256,7 @@
       border: 1px solid #ccc;
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
       page-break-inside: avoid;
+      float: left;
     }
 
     .feature-photo img {
